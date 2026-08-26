@@ -1,5 +1,4 @@
 // ====== ДАННЫЕ УСЛУГ ======
-// Меняйте этот массив, чтобы обновить карточки услуг
 const servicesData = [
   {
     "id": "telegram-bot",
@@ -19,7 +18,7 @@ const servicesData = [
     "title": "FromTheVoid — конструктор ботов",
     "description": "Кроссплатформенное приложение для создания Telegram-ботов с внутренним редактором. Собирайте ботов без кода, визуально настраивая логику.",
     "price": "Скоро",
-    "badge": "В разработке",
+    "badge": "Скоро",
     "features": [
       "Визуальный редактор",
       "Кроссплатформенность",
@@ -38,14 +37,34 @@ const servicesData = [
       "Интеграция с базами данных",
       "Автоматизация выгрузки"
     ]
+  },
+  {
+    "id": "telegram-bot",
+    "title": "Telegram-бот под ключ",
+    "description": "Разработка чат-бота по вашему техническому заданию. Аналитика, рассылки, интеграции с сервисами, воронки, админ-панели и прочая логика.",
+    "price": "от 7 000 до 15 000 ₽",
+    "badge": "Популярно",
+    "features": [
+      "Интеграция с API",
+      "Админ-панель",
+      "Автоматические рассылки",
+      "Воронки продаж"
+    ]
   }
+
 ];
 
 // ====== РЕНДЕР КАРТОЧЕК ======
 function renderServices(services) {
   const grid = document.getElementById('services-grid');
   if (!grid) return;
-  grid.innerHTML = '';
+
+  // Очищаем только реальные карточки, не трогаем заглушки
+  const existingCards = grid.querySelectorAll('.service-card:not(.service-card--placeholder)');
+  existingCards.forEach(card => card.remove());
+  // Также удаляем старые заглушки, они будут добавлены заново при необходимости
+  const existingPlaceholders = grid.querySelectorAll('.service-card--placeholder');
+  existingPlaceholders.forEach(card => card.remove());
 
   services.forEach(service => {
     const card = document.createElement('article');
@@ -71,6 +90,45 @@ function renderServices(services) {
 
     grid.appendChild(card);
   });
+
+  fillEmptySlots();
+}
+
+// ====== ЗАГЛУШКИ ДЛЯ ЗАПОЛНЕНИЯ СЕТКИ ======
+function fillEmptySlots() {
+  const grid = document.getElementById('services-grid');
+  if (!grid) return;
+
+  // Удаляем существующие заглушки
+  grid.querySelectorAll('.service-card--placeholder').forEach(el => el.remove());
+
+  // Определяем количество колонок
+  const gridStyle = window.getComputedStyle(grid);
+  const columnCount = gridStyle.gridTemplateColumns.split(' ').length;
+
+  // Если одна колонка — заглушки не нужны
+  if (columnCount <= 1) return;
+
+  // Считаем количество реальных карточек (не заглушек)
+  const realCards = grid.querySelectorAll('.service-card:not(.service-card--placeholder)');
+  const realCount = realCards.length;
+
+  // Сколько карточек нужно для полного ряда
+  const remainder = realCount % columnCount;
+  if (remainder === 0) return; // сетка уже заполнена
+
+  const placeholdersNeeded = columnCount - remainder;
+
+  for (let i = 0; i < placeholdersNeeded; i++) {
+    const placeholder = document.createElement('div');
+    placeholder.className = 'service-card service-card--placeholder';
+    placeholder.setAttribute('aria-hidden', 'true');
+    placeholder.innerHTML = `
+      <span class="placeholder-icon">+</span>
+      <span class="placeholder-text">Скоро новый продукт</span>
+    `;
+    grid.appendChild(placeholder);
+  }
 }
 
 // ====== ФОРМА (если раскомментируете) ======
@@ -100,7 +158,7 @@ function handleFormSubmit(event) {
 
 // ====== АНИМАЦИЯ ПОЯВЛЕНИЯ ======
 function setupScrollAnimations() {
-  const elements = document.querySelectorAll('.service-card, .example-card, .pricing-table-wrapper');
+  const elements = document.querySelectorAll('.service-card:not(.service-card--placeholder), .example-card, .pricing-table-wrapper');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -119,6 +177,11 @@ function setupScrollAnimations() {
   });
 }
 
+// ====== ОБРАБОТЧИК ИЗМЕНЕНИЯ РАЗМЕРА ОКНА ======
+function handleResize() {
+  fillEmptySlots();
+}
+
 // ====== ИНИЦИАЛИЗАЦИЯ ======
 document.addEventListener('DOMContentLoaded', () => {
   renderServices(servicesData);
@@ -128,4 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) {
     form.addEventListener('submit', handleFormSubmit);
   }
+
+  // Пересчитываем заглушки при изменении размера окна
+  window.addEventListener('resize', handleResize);
 });
