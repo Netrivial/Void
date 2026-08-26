@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Void — автоматизация бизнеса</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">VOID</a>
+      <nav class="main-nav">
+        <a href="#services">Услуги</a>
+        <a href="#pricing">Цены</a>
+        <a href="#example">Пример</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <a href="#contact" class="btn btn-outline header-cta">Оставить заявку</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-subtitle">Автоматизация бизнеса через Telegram</p>
+          <h1 class="hero-title">Void — технологии, которые работают на вас</h1>
+          <p class="hero-description">
+            Разрабатываю Telegram-ботов под ключ, создаю инструменты для конструирования ботов и парсинга данных.
+            Малому и среднему бизнесу — понятные решения без лишней сложности.
+          </p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">Смотреть услуги</a>
+            <a href="#example" class="btn btn-ghost">Пример</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-value">3</span>
+              <span class="stat-label">направления</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">по ТЗ</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">24/7</span>
+              <span class="stat-label">поддержка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-glow"></div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Что я предлагаю</p>
+          <h2 class="section-title">Услуги и продукты</h2>
+          <p class="section-desc">Выберите подходящий формат автоматизации или свяжитесь со мной для обсуждения индивидуального проекта.</p>
+        </div>
+        <div class="services-grid" id="services-grid">
+	<!-- Карточки загружаются из JSON -->
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Прозрачные цены</p>
+          <h2 class="section-title">Прайс-лист</h2>
+          <p class="section-desc">Точная стоимость зависит от сложности и объёма работ. Ниже — базовые ориентиры.</p>
+        </div>
+        <div class="pricing-table-wrapper">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Услуга</th>
+                <th>Описание</th>
+                <th>Стоимость</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Услуга">Telegram-бот под ключ</td>
+                <td data-label="Описание">Разработка по строгому ТЗ с аналитикой и интеграциями</td>
+                <td data-label="Стоимость">от 7 000 до 15 000 ₽</td>
+              </tr>
+              <tr>
+                <td data-label="Услуга">FromTheVoid — конструктор ботов</td>
+                <td data-label="Описание">Кроссплатформенное приложение с визуальным редактором</td>
+                <td data-label="Стоимость">Скоро</td>
+              </tr>
+              <tr>
+                <td data-label="Услуга">Парсер сервисов и сайтов</td>
+                <td data-label="Описание">Кроссплатформенное приложение для сбора данных</td>
+                <td data-label="Стоимость">Скоро</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="example" id="example">
+      <div class="container">
+        <div class="example-card">
+          <div class="example-info">
+            <p class="section-label">Готовый пример</p>
+            <h2 class="section-title">Бот для суши-бара</h2>
+            <p class="example-text">
+              Пример-визитка: Telegram-бот <strong>@SushiBarSwallowBot</strong> для приёма заявок в суши-бар.
+              Бот принимает заказы, уведомляет менеджера и ведёт запись клиентов — всё работает автоматически.
+            </p>
+            <p class="example-text">
+              Вы можете протестировать его прямо сейчас, чтобы оценить качество и удобство.
+            </p>
+            <a href="https://t.me/SushiBarSwallowBot" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Открыть бота в Telegram</a>
+          </div>
+          <div class="example-visual">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="chat-header">
+                  <span class="chat-dot"></span>
+                  <span>Суши-бар «Ласточка»</span>
+                </div>
+                <div class="chat-body">
+                  <div class="chat-bubble user">/start</div>
+                  <div class="chat-bubble bot">🍣Добро пожаловать в Sushi Bar!</div>
+                  <div class="chat-bubble user"> <b>Посмотреть каталог</b> </div>
+                  <div class="chat-bubble bot"><b>Филадельфия классик</b> <br> Лосось, сливочный сыр, огурец, рис <br> ...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p class="section-label">Свяжитесь со мной</p>
+            <h2 class="section-title">Обсудим ваш проект?</h2>
+            <p class="section-desc">
+              Оставьте заявку — я отвечу в течение рабочего дня. Расскажите кратко о задаче, и я предложу оптимальное решение.
+            </p>
+            <div class="contact-methods">
+              <div class="contact-method">
+                <span class="contact-method-label">Email</span>
+                <a href="mailto:f4ustth3vo1d@gmail.com" class="contact-link">f4ustth3vo1d@gmail.com</a>
+              </div>
+              <div class="contact-method">
+                <span class="contact-method-label">Telegram</span>
+                <a href="https://t.me/Wronsk1an" class="contact-link" target="_blank" rel="noopener noreferrer">@Wronsk1an</a>
+              </div>
+            </div>
+          </div>
+          <!-- <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email или Telegram</label>
+              <input type="text" id="email" name="email" placeholder="Для ответа" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Описание задачи</label>
+              <textarea id="message" name="message" rows="4" placeholder="Кратко опишите, что нужно автоматизировать"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Отправить заявку</button>
+            <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+          </form> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">VOID</span>
+      <span class="footer-text">© 2026 Void. Автоматизация бизнеса через Telegram.</span>
+      <a href="mailto:f4ustth3vo1d@gmail.com" class="footer-link">f4ustth3vo1d@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
