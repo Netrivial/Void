@@ -40,7 +40,7 @@ const servicesData = [
   }, 
   {
     "id": "VoidTeX",
-    "title": "Удобный редактор для LaTeX-документов",
+    "title": "VoidTeX – Удобный редактор для LaTeX-документов",
     "description": "Удобный редактор для создания, редактирования LaTeX-доеументов",
     "price": "Бесплатно",
     "badge": "В разработке",
@@ -56,11 +56,10 @@ const servicesData = [
 function renderServices(services) {
   const grid = document.getElementById('services-grid');
   if (!grid) return;
-
-  // Очищаем только реальные карточки, не трогаем заглушки
+
   const existingCards = grid.querySelectorAll('.service-card:not(.service-card--placeholder)');
   existingCards.forEach(card => card.remove());
-  // Также удаляем старые заглушки, они будут добавлены заново при необходимости
+
   const existingPlaceholders = grid.querySelectorAll('.service-card--placeholder');
   existingPlaceholders.forEach(card => card.remove());
 
@@ -96,22 +95,16 @@ function renderServices(services) {
 function fillEmptySlots() {
   const grid = document.getElementById('services-grid');
   if (!grid) return;
-
-  // Удаляем существующие заглушки
-  grid.querySelectorAll('.service-card--placeholder').forEach(el => el.remove());
-
-  // Определяем количество колонок
+ grid.querySelectorAll('.service-card--placeholder').forEach(el => el.remove());
+
   const gridStyle = window.getComputedStyle(grid);
   const columnCount = gridStyle.gridTemplateColumns.split(' ').length;
-
-  // Если одна колонка — заглушки не нужны
+
   if (columnCount <= 1) return;
-
-  // Считаем количество реальных карточек (не заглушек)
+
   const realCards = grid.querySelectorAll('.service-card:not(.service-card--placeholder)');
   const realCount = realCards.length;
-
-  // Сколько карточек нужно для полного ряда
+
   const remainder = realCount % columnCount;
   if (remainder === 0) return; // сетка уже заполнена
 
@@ -129,7 +122,7 @@ function fillEmptySlots() {
   }
 }
 
-// ====== ФОРМА (если раскомментируете) ======
+// ====== ФОРМА ======
 function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
@@ -189,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) {
     form.addEventListener('submit', handleFormSubmit);
   }
-
-  // Пересчитываем заглушки при изменении размера окна
+
   window.addEventListener('resize', handleResize);
 });
