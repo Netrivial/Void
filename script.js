@@ -14,8 +14,9 @@ const servicesData = [
     ]
   },
   {
-    "id": "from-the-void",
-    "title": "FromTheVoid — конструктор ботов",
+// Ранее from-the-void
+    "id": "VoidBots", 
+    "title": "VoidBots — конструктор ботов",
     "description": "Кроссплатформенное приложение для создания Telegram-ботов с внутренним редактором. Собирайте ботов без кода, визуально настраивая логику.",
     "price": "Скоро",
     "badge": "Скоро",
