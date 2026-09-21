@@ -3,7 +3,7 @@ const servicesData = [
   {
     "id": "telegram-bot",
     "title": "Telegram-бот под ключ",
-    "description": "Разработка чат-бота по вашему техническому заданию. Аналитика, рассылки, интеграции с сервисами, воронки, админ-панели и прочая логика.",
+    "description": "Разработка чат-бота по вашему техническому заданию. Аналитика, рассылки, интеграции с сервисами, воронки, админ-панели и прочая логика",
     "price": "от 7 000 до 15 000 ₽",
     "badge": "Популярно",
     "features": [
@@ -17,7 +17,7 @@ const servicesData = [
 // Ранее from-the-void
     "id": "VoidBots", 
     "title": "VoidBots — конструктор ботов",
-    "description": "Кроссплатформенное приложение для создания Telegram-ботов с внутренним редактором. Собирайте ботов без кода, визуально настраивая логику.",
+    "description": "Кроссплатформенное приложение для создания Telegram-ботов с внутренним редактором. Собирайте ботов без кода, визуально настраивая логику",
     "price": "Скоро",
     "badge": "Скоро",
     "features": [
@@ -30,7 +30,7 @@ const servicesData = [
   {
     "id": "parser-app",
     "title": "Парсер сервисов и сайтов",
-    "description": "Кроссплатформенное приложение для сбора данных с веб-ресурсов и интеграции с различными сервисами.",
+    "description": "Кроссплатформенное приложение для сбора данных с веб-ресурсов и интеграции с различными сервисами",
     "price": "Скоро",
     "badge": "В разработке",
     "features": [
@@ -57,7 +57,8 @@ const servicesData = [
 function renderServices(services) {
   const grid = document.getElementById('services-grid');
   if (!grid) return;
-
+
+
   const existingCards = grid.querySelectorAll('.service-card:not(.service-card--placeholder)');
   existingCards.forEach(card => card.remove());
 
@@ -96,16 +97,21 @@ function renderServices(services) {
 function fillEmptySlots() {
   const grid = document.getElementById('services-grid');
   if (!grid) return;
- grid.querySelectorAll('.service-card--placeholder').forEach(el => el.remove());
-
+
+ grid.querySelectorAll('.service-card--placeholder').forEach(el => el.remove());
+
+
   const gridStyle = window.getComputedStyle(grid);
   const columnCount = gridStyle.gridTemplateColumns.split(' ').length;
-
+
+
   if (columnCount <= 1) return;
-
+
+
   const realCards = grid.querySelectorAll('.service-card:not(.service-card--placeholder)');
   const realCount = realCards.length;
-
+
+
   const remainder = realCount % columnCount;
   if (remainder === 0) return; // сетка уже заполнена
 
@@ -183,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) {
     form.addEventListener('submit', handleFormSubmit);
   }
-
+
+
   window.addEventListener('resize', handleResize);
 });
