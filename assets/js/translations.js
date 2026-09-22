@@ -68,13 +68,37 @@ const translations = {
     "contact.desc": "Оставьте заявку — я отвечу в течение рабочего дня. Расскажите кратко о задаче, и я предложу оптимальное решение",
 
     // Футер
-    "footer.text": "© 2026 Void. Автоматизация бизнеса через Telegram.",
+    "footer.text": "© 2026 Void. Автоматизация бизнеса через Telegram",
 
     // 404
     "error404.label": "Ошибка 404",
-    "error404.text": "Эта страница затянута в чёрную дыру. Возможно, её переместили, удалили или она никогда здесь не появлялась.",
+    "error404.text": "Эта страница затянута в чёрную дыру. Возможно, её переместили, удалили или она никогда здесь не появлялась",
     "error404.btn.home": "Вернуться на главную",
-    "error404.btn.back": "Назад"
+    "error404.btn.back": "Назад",
+
+    // Кнопка в карточках услуг
+    "services.learnMore": "Подробнее",
+
+    // Страница VoidTeX
+    "meta.title.voidtex": "VoidTeX — Void",
+    "voidtex.nav.back": "На главную",
+    "voidtex.badge": "В разработке",
+    "voidtex.subtitle": "Кроссплатформенный редактор LaTeX-документов",
+    "voidtex.description": "Мы делаем работу с LaTeX простой и приятной. Современный интерфейс, интеграция с git и динамический просмотр документов — всё в одном приложении",
+    "voidtex.btn.features": "Возможности",
+    "voidtex.btn.contact": "Связаться",
+    "voidtex.features.label": "Что внутри",
+    "voidtex.features.title": "Возможности редактора",
+    "voidtex.features.desc": "VoidTeX находится в активной разработке. Ниже — то, над чем мы работаем",
+    "voidtex.feature.interface.title": "Современный интерфейс",
+    "voidtex.feature.interface.desc": "Чистый и понятный редактор, в котором приятно писать. Продуманная типографика, подсветка синтаксиса и аккуратная компоновка панелей",
+    "voidtex.feature.git.title": "Интеграция с git",
+    "voidtex.feature.git.desc": "Встроенная поддержка контроля версий: коммиты, ветки и синхронизация с удалёнными репозиториями прямо из приложения",
+    "voidtex.feature.preview.title": "Динамический просмотр документов",
+    "voidtex.feature.preview.desc": "Мгновенный рендер LaTeX рядом с исходником. Изменения отображаются по мере набора, без ручной пересборки документа",
+    "voidtex.status.title": "Скоро",
+    "voidtex.status.desc": "VoidTeX находится в активной разработке. Следите за обновлениями — мы сообщим о релизе",
+    "voidtex.status.cta": "Узнать больше",
   },
 
   en: {
@@ -142,13 +166,34 @@ const translations = {
     "contact.desc": "Leave a request — I'll reply within one business day. Briefly describe your task and I'll suggest the best solution",
 
     // Footer
-    "footer.text": "© 2026 Void. Business automation via Telegram.",
+    "footer.text": "© 2026 Void. Business automation via Telegram",
 
     // 404
     "error404.label": "Error 404",
-    "error404.text": "This page has been swallowed by a black hole. It might have been moved, deleted, or never existed here at all.",
+    "error404.text": "This page has been swallowed by a black hole. It might have been moved, deleted, or never existed here at all",
     "error404.btn.home": "Back to home",
-    "error404.btn.back": "Back"
+    "error404.btn.back": "Back",
+    "services.learnMore": "Learn more",
+
+    "meta.title.voidtex": "VoidTeX — Void",
+    "voidtex.nav.back": "Back to home",
+    "voidtex.badge": "In development",
+    "voidtex.subtitle": "A cross-platform editor for LaTeX documents",
+    "voidtex.description": "We make working with LaTeX simple and pleasant. A modern interface, git integration and live document preview — all in one app",
+    "voidtex.btn.features": "Features",
+    "voidtex.btn.contact": "Get in touch",
+    "voidtex.features.label": "What's inside",
+    "voidtex.features.title": "Editor features",
+    "voidtex.features.desc": "VoidTeX is in active development. Here's what we're working on",
+    "voidtex.feature.interface.title": "Modern interface",
+    "voidtex.feature.interface.desc": "A clean, understandable editor that's a pleasure to write in. Thoughtful typography, syntax highlighting and a tidy panel layout",
+    "voidtex.feature.git.title": "Git integration",
+    "voidtex.feature.git.desc": "Built-in version control: commits, branches and remote sync — all from within the app",
+    "voidtex.feature.preview.title": "Live document preview",
+    "voidtex.feature.preview.desc": "Instant LaTeX rendering next to the source. Changes appear as you type, with no manual rebuilds",
+    "voidtex.status.title": "Coming soon",
+    "voidtex.status.desc": "VoidTeX is in active development. Stay tuned — we'll announce the release",
+    "voidtex.status.cta": "Learn more",
   }
 };
 

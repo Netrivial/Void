@@ -127,22 +127,18 @@ const servicesData = [
         "Live document preview"
       ]
     }
+  },
+  {
+    id: "VoidTeX",
+    link: "pages/voidtex.html"
   }
 ];
 
 // ====== РЕНДЕР КАРТОЧЕК ======
-function renderServices() {
-  const grid = document.getElementById("services-grid");
-  if (!grid) return;
-
-  grid.querySelectorAll(".service-card:not(.service-card--placeholder)")
-    .forEach(card => card.remove());
-  grid.querySelectorAll(".service-card--placeholder")
-    .forEach(card => card.remove());
-
   servicesData.forEach(service => {
     const card = document.createElement("article");
     card.className = "service-card";
+    if (service.link) card.classList.add("service-card--linked");
 
     const badgeText = pickLocalized(service.badge);
     const badgeHtml = badgeText
@@ -156,19 +152,21 @@ function renderServices() {
         "</ul>"
       : "";
 
+    const linkHtml = service.link
+      ? `<a href="${service.link}" class="service-link">${t("services.learnMore")}</a>`
+      : "";
+
     card.innerHTML = `
       ${badgeHtml}
       <h3 class="service-title">${pickLocalized(service.title)}</h3>
       <p class="service-description">${pickLocalized(service.description)}</p>
       <p class="service-price">${pickLocalized(service.price)}</p>
       ${featuresHtml}
+      ${linkHtml}
     `;
 
     grid.appendChild(card);
   });
-
-  fillEmptySlots();
-}
 
 // ====== ЗАГЛУШКИ ======
 function fillEmptySlots() {
