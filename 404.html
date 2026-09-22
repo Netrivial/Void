@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Void</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body class="page-404">
+  <canvas id="blackhole-canvas" aria-hidden="true"></canvas>
+
+  <main class="page-404-content">
+    <a href="index.html" class="logo page-404-logo">VOID</a>
+    <!-- <p class="section-label">Ошибка 404</p> -->
+    <h1 class="page-404-code">404</h1>
+    <p class="page-404-text">
+      Эта страница затянута в чёрную дыру. Возможно, её переместили,
+      удалили или она никогда здесь не появлялась
+    </p>
+    <div class="page-404-actions">
+      <a href="index.html" class="btn btn-primary">Вернуться на главную</a>
+      <a href="#services" class="btn btn-ghost" onclick="history.back(); return false;">Назад</a>
+    </div>
+    <!-- <p class="page-404-hint">
+      Нажмите на чёрную дыру — она иногда говорит
+    </p> -->
+  </main>
+
+  <script src="assets/js/404.js"></script>
+</body>
+</html>
