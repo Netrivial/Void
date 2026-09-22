@@ -931,3 +931,90 @@ section {
     text-align: center;
   }
 }
+
+.page-404-lang {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 5;
+}
+
+@media (max-width: 480px) {
+  .page-404-lang {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+/* ============================================ */
+/* Переключатель языка / Language switcher      */
+/* ============================================ */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  transition: border-color var(--transition);
+}
+
+.lang-switcher:hover {
+  border-color: var(--border-glow);
+}
+
+.lang-btn {
+  min-width: 42px;
+  padding: 6px 12px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 1.2px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-btn:hover:not(.lang-btn--active) {
+  color: var(--accent-pink);
+  background-color: rgba(255, 77, 109, 0.12);
+}
+
+.lang-btn:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent-glow-soft);
+}
+
+.lang-btn--active {
+  background-color: var(--accent-red);
+  color: #fff;
+  box-shadow: 0 0 14px var(--accent-glow-soft);
+}
+
+.lang-btn--active:hover {
+  background-color: var(--accent-red-dark);
+  color: #fff;
+  box-shadow: 0 0 18px var(--accent-glow);
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    gap: 8px;
+  }
+  .lang-btn {
+    min-width: 36px;
+    padding: 6px 9px;
+    font-size: 0.68rem;
+  }
+}

@@ -262,16 +262,12 @@ if (prefersReducedMotion) {
   requestAnimationFrame(frame);
 }
 
-const jokes = [
-  "Эта страница ушла в сингулярность. Обещала вернуться",
-  "Мы отправили запрос в параллельную вселенную. Ответа нет",
-  "Сюда даже свет не доходит. Что уж о странице говорить",
-  "Простите, страница решила стать ботом и ушла в Telegram"
-];
-
 let toastTimeout = null;
 
 function showJoke(x, y) {
+  const list = jokes404[currentLang] || jokes404.ru;
+  const text = list[Math.floor(Math.random() * list.length)];
+
   let toast = document.getElementById('void-toast');
   if (!toast) {
     toast = document.createElement('div');
@@ -280,7 +276,6 @@ function showJoke(x, y) {
     document.body.appendChild(toast);
   }
 
-  const text = jokes[Math.floor(Math.random() * jokes.length)];
   toast.textContent = text;
 
   const maxX = window.innerWidth - 40;
