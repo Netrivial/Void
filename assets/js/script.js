@@ -126,15 +126,21 @@ const servicesData = [
         "Git integration",
         "Live document preview"
       ]
-    }
-  },
-  {
-    id: "VoidTeX",
+    },
     link: "pages/voidtex.html"
   }
 ];
 
 // ====== РЕНДЕР КАРТОЧЕК ======
+function renderServices() {
+  const grid = document.getElementById("services-grid");
+  if (!grid) return;
+
+  grid.querySelectorAll(".service-card:not(.service-card--placeholder)")
+    .forEach(card => card.remove());
+  grid.querySelectorAll(".service-card--placeholder")
+    .forEach(card => card.remove());
+
   servicesData.forEach(service => {
     const card = document.createElement("article");
     card.className = "service-card";
@@ -167,6 +173,9 @@ const servicesData = [
 
     grid.appendChild(card);
   });
+
+  fillEmptySlots();
+}
 
 // ====== ЗАГЛУШКИ ======
 function fillEmptySlots() {
